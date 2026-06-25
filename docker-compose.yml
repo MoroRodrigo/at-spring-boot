@@ -3,9 +3,7 @@ version: '3.8'
 services:
 
   postgres:
-
     image: postgres:16
-
     container_name: postgres_hospital
 
     environment:
@@ -14,13 +12,12 @@ services:
       POSTGRES_PASSWORD: postgres
 
     ports:
-      - "5433:5433"
+      - "5433:5432"
 
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
   hospital-api:
-
     build: .
 
     container_name: hospital_api
@@ -29,7 +26,7 @@ services:
       - postgres
 
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5433/hospital_db
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/hospital_db
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
 

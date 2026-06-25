@@ -29,7 +29,7 @@ services:
       - postgres
 
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/hospital_db
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5433/hospital_db
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
 
